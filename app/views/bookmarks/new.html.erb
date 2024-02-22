@@ -1,0 +1,10 @@
+<div>
+  <h3>📌 Add bookmark to <%= @list.name %></h3>
+  <%= simple_form_for [ @list, @bookmark ] do |f| %>
+    <%= f.input :comment %>
+    <%= f.association :movie %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
+
+<button><%= link_to "Home", lists_path %></button>

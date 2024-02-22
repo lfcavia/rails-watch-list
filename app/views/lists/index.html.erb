@@ -1,0 +1,18 @@
+<h1>Welcome page: Index of lists</h1>
+
+<button><%= link_to "Add new list", new_list_path %></button>
+
+
+<% @lists.each do |l| %>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">
+      <%= link_to l.name, list_path(l) %>
+    </h5>
+    <button><%= link_to "📌 Add bookmark", new_list_bookmark_path(l) %></button>
+  </div>
+</div>
+
+
+<% end %>

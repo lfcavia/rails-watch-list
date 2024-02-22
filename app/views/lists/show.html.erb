@@ -1,0 +1,29 @@
+<h1>List page for <%= @list.name %></h1>
+
+<button class="btn"><%= link_to "Home", lists_path %></button>
+
+<h3>In this list your movies are:</h3>
+
+<div>
+  <h3>📌 Add bookmark to <%= @list.name %></h3>
+  <%= simple_form_for [ @list, @bookmark ] do |f| %>
+    <%= f.input :comment %>
+    <%= f.association :movie %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
+
+
+<% @list.bookmarks.each do |b| %>
+
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src=<%= b.movie.poster_url %> alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%= b.movie.title %></h5>
+      <p class="card-text"><%= b.movie.overview %></p>
+      <p class="card-text"> 👉 What people say: <strong><%= b.comment %></strong></p>
+      <a href=# class="btn btn-primary">Watch movie</a>
+    </div>
+  </div>
+
+<% end %>
