@@ -2,6 +2,11 @@
 
 <button class="btn"><%= link_to "Home", lists_path %></button>
 
+<div class="card-category"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+  url(<%= cl_image_path(@list.photo.key, height: 300, width: 400, crop: :fill) if @list.photo.attached? %>)">
+</div>
+
 <h3>In this list your movies are:</h3>
 
 <div>

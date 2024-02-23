@@ -26,7 +26,6 @@ class ListsController < ApplicationController
       #     format.json { render json: @garden.errors, status: :unprocessable_entity }
       #   end
       # end
-
   end
 
   def show
@@ -34,9 +33,11 @@ class ListsController < ApplicationController
     @bookmark = Bookmark.new
   end
 
+  
+
   private
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :photo)
   end
 end
