@@ -23,6 +23,7 @@
       <p class="card-text"><%= b.movie.overview %></p>
       <p class="card-text"> 👉 What people say: <strong><%= b.comment %></strong></p>
       <a href=# class="btn btn-primary">Watch movie</a>
+      <button class="btn btn-secondary"><%= link_to "Delete", bookmark_path(b), data: {turbo_method: :delete} %></button>
     </div>
   </div>
 
