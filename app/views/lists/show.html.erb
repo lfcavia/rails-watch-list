@@ -20,9 +20,9 @@
 
 
 <% @list.bookmarks.each do |b| %>
-
+  <%= b.movie.poster_url%>
   <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src=<%= b.movie.poster_url %> alt="Card image cap">
+    <img alt="Card image cap" class="card-img-top" src=<%= b.movie.poster_url%>>
     <div class="card-body">
       <h5 class="card-title"><%= b.movie.title %></h5>
       <p class="card-text"><%= b.movie.overview %></p>
